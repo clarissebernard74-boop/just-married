@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Robe — Just Married</title>
+<meta name="description" content="Une robe Just Married, taillée dans un drap de trousseau ancien. Atelier 5 rue Duguesclin, Lyon 6e.">
+<meta name="theme-color" content="#f3efe7">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 100'%3E%3Crect width='80' height='100' rx='6' fill='%23f3efe7'/%3E%3Cpath d='M10 94V44a30 30 0 0 1 60 0v50' fill='none' stroke='%231c1a17' stroke-width='3'/%3E%3Ctext x='40' y='78' font-family='Georgia' font-style='italic' font-size='34' text-anchor='middle' fill='%231c1a17'%3EJM%3C/text%3E%3Cpath d='M36 10l8 8M44 10l-8 8' stroke='%239c3b2e' stroke-width='3'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f3efe7;
+  --paper-2:#ebe5da;
+  --ink:#1c1a17;
+  --ink-soft:#6b655c;
+  --line:rgba(28,26,23,.18);
+  --thread:#9c3b2e;
+  --blush:#d9a79c;
+  --serif:"Cormorant",Georgia,serif;
+  --sans:"Jost",system-ui,sans-serif;
+  --gutter:clamp(16px,4vw,56px);
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-weight:300;font-size:15px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+video{display:block;width:100%;height:100%;object-fit:cover}
+::selection{background:var(--thread);color:var(--paper)}
+:focus-visible{outline:1px solid var(--thread);outline-offset:4px}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:300;opacity:.07;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.eyebrow{font-size:11px;letter-spacing:.32em;text-transform:uppercase;font-weight:400}
+
+/* en-tête */
+header{position:sticky;top:0;z-index:50;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:10px var(--gutter);background:rgba(243,239,231,.88);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line)}
+header .r{justify-self:end}
+header a.eyebrow{position:relative}
+header a.eyebrow::after{content:"";position:absolute;left:0;bottom:-4px;height:1px;width:0;background:currentColor;transition:width .5s}
+header a.eyebrow:hover::after{width:100%}
+.logo{display:flex;flex-direction:column;align-items:center;gap:5px}
+.logo svg{width:26px;height:33px}
+.wordmark{font-family:var(--serif);font-style:italic;font-weight:400;font-size:22px;line-height:1;white-space:nowrap}
+
+/* fiche */
+.robe{display:grid;grid-template-columns:7fr 5fr;gap:clamp(28px,5vw,80px);padding:clamp(24px,4vw,48px) var(--gutter) clamp(80px,10vw,140px)}
+.media{display:flex;flex-direction:column;gap:clamp(12px,2vw,24px)}
+.media figure{overflow:hidden;background:var(--paper-2);position:relative}
+.media img,.media video{width:100%;height:100%;object-fit:cover}
+.media .m1{aspect-ratio:3/4;border-radius:999px 999px 0 0}
+.media .m2{aspect-ratio:4/5}
+.media .m3{aspect-ratio:5/4;width:70%;align-self:flex-end}
+.media figcaption{position:absolute;left:16px;bottom:14px;color:var(--paper);font-size:10px;text-shadow:0 1px 10px rgba(0,0,0,.4)}
+.media img{transition:transform 1.6s var(--ease)}
+.media figure:hover img{transform:scale(1.04)}
+
+.info{position:sticky;top:110px;align-self:start;display:flex;flex-direction:column}
+.info .no{color:var(--ink-soft)}
+.info h1{font-family:var(--serif);font-weight:300;font-size:clamp(64px,8vw,128px);line-height:.85;letter-spacing:-.02em;margin:18px 0 14px}
+.info .mono{font-family:var(--serif);font-style:italic;font-size:26px;color:var(--thread)}
+.info .line{font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(22px,2vw,28px);line-height:1.25;margin:26px 0 30px;max-width:30ch}
+dl{border-top:1px solid var(--ink)}
+dl div{display:grid;grid-template-columns:120px 1fr;gap:16px;padding:12px 0;border-bottom:1px solid var(--line)}
+dt{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-soft);padding-top:3px}
+dd{font-family:var(--serif);font-size:19px;line-height:1.3}
+.buy{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin:30px 0 22px;flex-wrap:wrap}
+.price b{display:block;font-family:var(--serif);font-weight:400;font-size:38px;line-height:1}
+.price small{color:var(--ink-soft);font-size:12px}
+.btn{display:inline-block;background:var(--ink);color:var(--paper);border-radius:999px;padding:18px 34px;font-size:11px;letter-spacing:.32em;text-transform:uppercase;transition:background .4s}
+.btn:hover{background:var(--thread)}
+.more{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--ink-soft);font-size:13px}
+.more a{border-bottom:1px solid var(--line)}
+.more a:hover{color:var(--ink);border-color:var(--ink)}
+
+/* précédente / suivante */
+.nav{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line)}
+.nav a{display:flex;align-items:center;gap:clamp(14px,2vw,28px);padding:clamp(28px,4vw,48px) var(--gutter);transition:background .5s}
+.nav a:hover{background:var(--paper-2)}
+.nav a+a{border-left:1px solid var(--line);flex-direction:row-reverse;text-align:right}
+.nav img{width:clamp(64px,8vw,110px);aspect-ratio:3/4;object-fit:cover;border-radius:999px 999px 0 0;filter:grayscale(.3)}
+.nav span{display:block;color:var(--ink-soft)}
+.nav b{display:block;font-family:var(--serif);font-weight:300;font-size:clamp(30px,4vw,56px);line-height:1}
+.all{display:block;text-align:center;padding:22px;border-top:1px solid var(--line)}
+
+/* pied de page */
+footer{background:var(--ink);color:var(--paper);padding:clamp(60px,8vw,100px) var(--gutter) 28px;text-align:center}
+footer .wm{font-family:var(--serif);font-style:italic;font-weight:300;color:#fff;font-size:clamp(48px,11vw,180px);line-height:.85;letter-spacing:-.03em;white-space:nowrap}
+footer p{margin-top:24px;color:rgba(243,239,231,.55);font-size:12px}
+
+.rv{opacity:0;transform:translateY(30px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease)}
+.rv.on{opacity:1;transform:none}
+
+@media (max-width:900px){
+  .robe{grid-template-columns:1fr}
+  .info{position:static}
+  /* galerie à faire glisser sur mobile */
+  .media{flex-direction:row;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 calc(var(--gutter)*-1);padding:0 var(--gutter);scrollbar-width:none}
+  .media::-webkit-scrollbar{display:none}
+  .media figure{flex:0 0 82%;scroll-snap-align:center}
+  .media .m1,.media .m2,.media .m3{aspect-ratio:3/4;width:auto;align-self:auto}
+  header .l .hide{display:none}
+}
+@media (max-width:560px){
+  .wordmark{font-size:19px}
+  dl div{grid-template-columns:96px 1fr}
+  .nav b{font-size:26px}
+  .nav img{display:none}
+}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="arch" viewBox="0 0 80 100">
+    <path d="M6 97V42a34 34 0 0 1 68 0v55" fill="none" stroke="currentColor" stroke-width="1.2"/>
+    <path d="M12 97V42a28 28 0 0 1 56 0v55" fill="none" stroke="currentColor" stroke-width=".7" stroke-dasharray="2.2 2.2"/>
+    <path d="M1 97h78" stroke="currentColor" stroke-width="1.2"/>
+    <path d="M36.5 4.5l7 7M43.5 4.5l-7 7" stroke="var(--thread)" stroke-width="1.6" stroke-linecap="round"/>
+    <text x="33" y="73" font-family="Cormorant, Georgia, serif" font-style="italic" font-size="46" text-anchor="middle" fill="currentColor">J</text>
+    <text x="47" y="76" font-family="Cormorant, Georgia, serif" font-style="italic" font-weight="300" font-size="31" text-anchor="middle" fill="currentColor">M</text>
+    <text x="40" y="91" font-family="Jost, sans-serif" font-size="4.6" letter-spacing="1.6" text-anchor="middle" fill="currentColor">LYON</text>
+  </symbol>
+</svg>
+
+<header>
+  <a class="l eyebrow" href="index.html#collection">← <span class="hide">La </span>collection</a>
+  <a href="index.html" class="logo" aria-label="Just Married — accueil">
+    <svg><use href="#arch"/></svg>
+    <span class="wordmark">Just Married</span>
+  </a>
+  <a class="r eyebrow" href="index.html#rdv">Rendez-vous</a>
+</header>
+
+<main>
+  <article class="robe">
+    <div class="media" id="media"></div>
+    <div class="info rv">
+      <span class="no eyebrow" id="no"></span>
+      <h1 id="name"></h1>
+      <span class="mono" id="mono"></span>
+      <p class="line" id="line"></p>
+      <dl id="specs"></dl>
+      <div class="buy">
+        <div class="price"><b id="price"></b><small>Pièce unique — retouches et initiales brodées incluses</small></div>
+        <a class="btn" id="book" href="index.html#rdv">Essayer</a>
+      </div>
+      <div class="more">
+        <span>Essayage à l'atelier, 5 rue Duguesclin, Lyon 6e</span>
+        <a href="index.html#just-you">Ou composer une Just You →</a>
+      </div>
+    </div>
+  </article>
+
+  <nav class="nav" aria-label="Autres robes">
+    <a id="prev"><img alt=""><div><span class="eyebrow">Robe précédente</span><b></b></div></a>
+    <a id="next"><img alt=""><div><span class="eyebrow">Robe suivante</span><b></b></div></a>
+  </nav>
+  <a class="all eyebrow" href="index.html#collection">Voir toute la collection</a>
+</main>
+
+<footer>
+  <div class="wm">Just Married</div>
+  <p>© 2026 Just Married — 5 rue Duguesclin, 69006 Lyon — Vidéos : Mixkit — Photos : Unsplash</p>
+</footer>
+
+<script>
+const IMG = (id, w = 1200) => `https://images.unsplash.com/photo-${id}?w=${w}&q=80&auto=format&fit=crop`;
+const VID = id => `https://assets.mixkit.co/videos/${id}/${id}-720.mp4`;
+
+// Les robes Just Married — une entrée par modèle
+const ROBES = [
+  {slug:'mathilde', name:'Mathilde', no:'014', ini:'M.L.', year:1894, photo:'1774660810310-5023390fe028', video:'40586', detail:'1525169087805-031a4da0623c',
+   line:"Une robe droite et calme, qui laisse parler le lin.", drap:'Lin de Haute-Saône', trouve:'Une malle, Vesoul', broderie:'Point de croix rouge, chiffre couronné', coupe:'Trapèze, col bateau, dos en jours échelle', taille:'38 — retouchable du 34 au 44', price:3400},
+  {slug:'augustine', name:'Augustine', no:'015', ini:'A.R.', year:1911, photo:'1549488497-94b52bddac5d', video:'8818', detail:'1550005809-91ad75fb315f',
+   line:"Le volume d'une robe de bal, la douceur d'un drap.", drap:'Métis lavé à la cendre', trouve:'Vide-grenier, Brantôme', broderie:'Plumetis blanc', coupe:'Princesse, encolure cœur, dos à boutons', taille:'36 — retouchable du 34 au 42', price:3900},
+  {slug:'jeanne', name:'Jeanne', no:'016', ini:'J.B.', year:1902, photo:'1521467752200-3bccf80f16ed', video:'5226', detail:'1532454781337-fc3edff34f91',
+   line:"Un corsage lacé, comme on le faisait chez les grands-mères.", drap:"Taie d'oreiller & drap assortis", trouve:'Ferme du Morvan', broderie:'Initiales entrelacées, jours Venise', coupe:'Colonne, encolure en V, dos lacé, traîne courte', taille:'38 — retouchable du 34 au 44', price:3600},
+  {slug:'eugenie', name:'Eugénie', no:'017', ini:'E.C.', year:1926, photo:'1622277430358-f4d134452e2e', video:'5223', detail:'1579583764988-3e08c6132d2a',
+   line:"La plus simple de toutes. Pour une noce à la campagne.", drap:'Lin rouï sur pré', trouve:'Saint-Ouen, allée Vernaison', broderie:'Monogramme Art déco', coupe:'Robe-chemise, col bateau, dos nu, ceinture de ruban', taille:'40 — retouchable du 36 au 46', price:2900},
+  {slug:'louise', name:'Louise', no:'018', ini:'L.D.', year:1888, photo:'1761116065261-586acfd09b7f', video:'5190', detail:'1525169087805-031a4da0623c',
+   line:"La plus ancienne de nos robes, et la plus lumineuse.", drap:'Drap brodé au point de croix', trouve:"Don d'une petite-fille, Lyon", broderie:'Feston rouge, numéro de pile « 6 »', coupe:'Trapèze, encolure carrée, manches longues en dentelle', taille:'38 — retouchable du 34 au 44', price:3800},
+  {slug:'celeste', name:'Céleste', no:'019', ini:'C.V.', year:1919, photo:'1777312378694-cc3c67fa1adf', video:'5192', detail:'1585241920473-b472eb9ffbae',
+   line:"Une cape qui s'enlève pour danser.", drap:'Nappe de communion', trouve:'Presbytère de Haute-Loire', broderie:"Épis de blé", coupe:'Colonne, col montant, cape amovible', taille:'36 — retouchable du 34 au 42', price:4200},
+  {slug:'hortense', name:'Hortense', no:'020', ini:'H.B.', year:1897, photo:'1529636273736-fc88b31ea9d9', video:'5191', detail:'1770757685010-2d3d30d270d6',
+   line:"Un bustier baleiné, une jupe qui tourne.", drap:'Drap de Bourgogne', trouve:'Domaine viticole, Beaune', broderie:'Chiffre en relief, coton blanc', coupe:'Bustier, jupe en godets, dos lacé', taille:'38 — retouchable du 34 au 44', price:4100},
+  {slug:'marguerite', name:'Marguerite', no:'021', ini:'M.F.', year:1923, photo:'1631234764568-996fab371596', video:'40597', detail:'1557363763-8381968f8353',
+   line:"Légère comme une chemise d'été.", drap:'Chemise de nuit de trousseau', trouve:'Brocante de la Croix-Rousse, Lyon', broderie:'Marguerites au passé plat', coupe:'Coupe en biais, bretelles fines, dos nu', taille:'36 — retouchable du 34 au 40', price:2700},
+  {slug:'rose', name:'Rose', no:'022', ini:'R.T.', year:1905, photo:'1594552072238-b8a33785b261', video:'5221', detail:'1550005809-91ad75fb315f',
+   line:"Des poches, parce qu'une mariée a toujours quelque chose à garder.", drap:'Drap à jours, Savoie', trouve:"Chalet d'alpage, Beaufortain", broderie:'Jours à fils tirés, initiales bleues', coupe:'Trapèze à poches, encolure carrée, dos à boutons', taille:'40 — retouchable du 36 au 46', price:3200},
+  {slug:'adele', name:'Adèle', no:'023', ini:'A.P.', year:1899, photo:'1549417229-7686ac5595fd', video:'40591', detail:'1549416878-b9ca95e26903',
+   line:"Un col Claudine et des boutons de nacre, comme en 1899.", drap:'Métis bleuté', trouve:'Coffre de mariage, Finistère', broderie:'Chiffre bleu marine, ourlet à jours', coupe:'Princesse, col Claudine, boutons de nacre', taille:'38 — retouchable du 34 au 44', price:3500},
+  {slug:'blanche', name:'Blanche', no:'024', ini:'B.G.', year:1931, photo:'1548313093-370cf4ba3892', video:'40602', detail:'1599142296733-1c1f2073e6de',
+   line:"Une combinaison pour la mairie, une surjupe pour le soir.", drap:'Linge de soie lyonnais', trouve:'Atelier de soyeux, quai Saint-Vincent', broderie:'Monogramme tissé, soie ivoire', coupe:'Combinaison, encolure en V, surjupe amovible', taille:'38 — retouchable du 34 au 44', price:4400}
+];
+
+const slug = new URLSearchParams(location.search).get('m');
+const i = ROBES.findIndex(r => r.slug === slug);
+if (i < 0) location.replace('index.html#collection');
+else render(ROBES[i], i);
+
+function render(r, i) {
+  document.title = `${r.name} — Just Married`;
+  document.querySelector('meta[name=description]').content = `${r.name}, robe de mariée Just Married N° ${r.no}. ${r.line} Pièce unique, atelier 5 rue Duguesclin, Lyon 6e.`;
+
+  document.getElementById('media').innerHTML = `
+    <figure class="m1"><img src="${IMG(r.photo, 1400)}" alt="Robe ${r.name}"></figure>
+    <figure class="m2"><video autoplay muted loop playsinline poster="${IMG(r.photo, 900)}" src="${VID(r.video)}"></video><figcaption class="eyebrow">${r.name} en mouvement</figcaption></figure>
+    <figure class="m3"><img src="${IMG(r.detail, 1000)}" alt="Détail de la robe ${r.name}" loading="lazy"><figcaption class="eyebrow">Détail</figcaption></figure>`;
+
+  document.getElementById('no').textContent = `N° ${r.no} — Pièce unique`;
+  document.getElementById('name').textContent = r.name;
+  document.getElementById('mono').textContent = `${r.ini} ${r.year}`;
+  document.getElementById('line').textContent = r.line;
+  document.getElementById('specs').innerHTML = [
+    ['Drap', `${r.drap}, ${r.year}`], ['Trouvé', r.trouve], ['Broderie', r.broderie], ['Coupe', r.coupe], ['Taille', r.taille]
+  ].map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join('');
+  document.getElementById('price').textContent = r.price.toLocaleString('fr-FR') + ' €';
+  const book = document.getElementById('book');
+  book.textContent = `Essayer ${r.name}`;
+  book.href = `index.html?modele=${r.slug}#rdv`;
+
+  const link = (id, x) => {
+    const a = document.getElementById(id);
+    a.href = `robe.html?m=${x.slug}`;
+    a.querySelector('img').src = IMG(x.photo, 300);
+    a.querySelector('b').textContent = x.name;
+  };
+  link('prev', ROBES[(i - 1 + ROBES.length) % ROBES.length]);
+  link('next', ROBES[(i + 1) % ROBES.length]);
+
+  requestAnimationFrame(() => document.querySelectorAll('.rv').forEach(e => e.classList.add('on')));
+}
+</script>
+</body>
+</html>
