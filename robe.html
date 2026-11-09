@@ -6,9 +6,13 @@
 <title>Robe — Just Married</title>
 <meta name="description" content="Une robe Just Married, taillée dans un drap de trousseau ancien. Atelier 5 rue Duguesclin, Lyon 6e.">
 <meta name="theme-color" content="#f3efe7">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 100'%3E%3Crect width='80' height='100' rx='6' fill='%23f3efe7'/%3E%3Cpath d='M10 94V44a30 30 0 0 1 60 0v50' fill='none' stroke='%231c1a17' stroke-width='3'/%3E%3Ctext x='40' y='78' font-family='Georgia' font-style='italic' font-size='34' text-anchor='middle' fill='%231c1a17'%3EJM%3C/text%3E%3Cpath d='M36 10l8 8M44 10l-8 8' stroke='%239c3b2e' stroke-width='3'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 100'%3E%3Crect width='80' height='100' rx='6' fill='%23f3efe7'/%3E%3Cpath d='M10 94V44a30 30 0 0 1 60 0v50' fill='none' stroke='%231c1a17' stroke-width='3'/%3E%3Ctext x='40' y='78' font-family='Georgia' font-style='italic' font-size='34' text-anchor='middle' fill='%231c1a17'%3EJM%3C/text%3E%3Cpath d='M40 6l6 7-6 7-6-7z' fill='%23b08d4a'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Robe — Just Married">
+<meta property="og:image" content="https://images.unsplash.com/photo-1761116065261-586acfd09b7f?w=1200&h=630&q=80&auto=format&fit=crop">
+<link rel="stylesheet" href="jm.css">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -90,8 +94,12 @@ footer{background:var(--ink);color:var(--paper);padding:clamp(60px,8vw,100px) va
 footer .wm{font-family:var(--serif);font-style:italic;font-weight:300;color:#fff;font-size:clamp(48px,11vw,180px);line-height:.85;letter-spacing:-.03em;white-space:nowrap}
 footer p{margin-top:24px;color:rgba(243,239,231,.55);font-size:12px}
 
-.rv{opacity:0;transform:translateY(30px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease)}
-.rv.on{opacity:1;transform:none}
+.info>*:not(h1){opacity:0;transform:translateY(24px);transition:opacity 1s var(--ease),transform 1s var(--ease);transition-delay:calc(250ms + var(--k,0) * 90ms)}
+.info.on>*{opacity:1;transform:none}
+dl div{opacity:0;transform:translateX(-14px);transition:opacity .8s var(--ease),transform .8s var(--ease);transition-delay:calc(600ms + var(--k,0) * 80ms)}
+.info.on dl div{opacity:1;transform:none}
+.nav img{transition:filter .6s,scale .8s var(--ease)}
+.nav a:hover img{filter:grayscale(0);scale:1.05}
 
 @media (max-width:900px){
   .robe{grid-template-columns:1fr}
@@ -109,7 +117,7 @@ footer p{margin-top:24px;color:rgba(243,239,231,.55);font-size:12px}
   .nav b{font-size:26px}
   .nav img{display:none}
 }
-@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.info>*,dl div{opacity:1;transform:none;transition:none}}
 </style>
 </head>
 <body>
@@ -119,7 +127,7 @@ footer p{margin-top:24px;color:rgba(243,239,231,.55);font-size:12px}
     <path d="M6 97V42a34 34 0 0 1 68 0v55" fill="none" stroke="currentColor" stroke-width="1.2"/>
     <path d="M12 97V42a28 28 0 0 1 56 0v55" fill="none" stroke="currentColor" stroke-width=".7" stroke-dasharray="2.2 2.2"/>
     <path d="M1 97h78" stroke="currentColor" stroke-width="1.2"/>
-    <path d="M36.5 4.5l7 7M43.5 4.5l-7 7" stroke="var(--thread)" stroke-width="1.6" stroke-linecap="round"/>
+    <path d="M40 3l3.6 4.2L40 11.4l-3.6-4.2z" fill="var(--key,#b08d4a)"/>
     <text x="33" y="73" font-family="Cormorant, Georgia, serif" font-style="italic" font-size="46" text-anchor="middle" fill="currentColor">J</text>
     <text x="47" y="76" font-family="Cormorant, Georgia, serif" font-style="italic" font-weight="300" font-size="31" text-anchor="middle" fill="currentColor">M</text>
     <text x="40" y="91" font-family="Jost, sans-serif" font-size="4.6" letter-spacing="1.6" text-anchor="middle" fill="currentColor">LYON</text>
@@ -138,9 +146,9 @@ footer p{margin-top:24px;color:rgba(243,239,231,.55);font-size:12px}
 <main>
   <article class="robe">
     <div class="media" id="media"></div>
-    <div class="info rv">
+    <div class="info">
       <span class="no eyebrow" id="no"></span>
-      <h1 id="name"></h1>
+      <h1 id="name" data-split></h1>
       <span class="mono" id="mono"></span>
       <p class="line" id="line"></p>
       <dl id="specs"></dl>
@@ -163,8 +171,8 @@ footer p{margin-top:24px;color:rgba(243,239,231,.55);font-size:12px}
 </main>
 
 <footer>
-  <div class="wm">Just Married</div>
-  <p>© 2026 Just Married — 5 rue Duguesclin, 69006 Lyon — Vidéos : Mixkit — Photos : Unsplash</p>
+  <div class="wm" data-split>Just Married</div>
+  <p>© 2026 Just Married — 5 rue Duguesclin, 69006 Lyon — Vidéos &amp; musiques : Mixkit — Photos : Unsplash</p>
 </footer>
 
 <script>
@@ -173,27 +181,27 @@ const VID = id => `https://assets.mixkit.co/videos/${id}/${id}-720.mp4`;
 
 // Les robes Just Married — une entrée par modèle
 const ROBES = [
-  {slug:'mathilde', name:'Mathilde', no:'014', ini:'M.L.', year:1894, photo:'1774660810310-5023390fe028', video:'40586', detail:'1525169087805-031a4da0623c',
+  {slug:'mathilde', name:'Mathilde', no:'014', ini:'M.L.', year:1894, photo:'1774660810310-5023390fe028', video:'40586', music:'710', detail:'1525169087805-031a4da0623c',
    line:"Une robe droite et calme, qui laisse parler le lin.", drap:'Lin de Haute-Saône', trouve:'Une malle, Vesoul', broderie:'Point de croix rouge, chiffre couronné', coupe:'Trapèze, col bateau, dos en jours échelle', taille:'38 — retouchable du 34 au 44', price:3400},
-  {slug:'augustine', name:'Augustine', no:'015', ini:'A.R.', year:1911, photo:'1549488497-94b52bddac5d', video:'8818', detail:'1550005809-91ad75fb315f',
+  {slug:'augustine', name:'Augustine', no:'015', ini:'A.R.', year:1911, photo:'1549488497-94b52bddac5d', video:'8818', music:'688', detail:'1550005809-91ad75fb315f',
    line:"Le volume d'une robe de bal, la douceur d'un drap.", drap:'Métis lavé à la cendre', trouve:'Vide-grenier, Brantôme', broderie:'Plumetis blanc', coupe:'Princesse, encolure cœur, dos à boutons', taille:'36 — retouchable du 34 au 42', price:3900},
-  {slug:'jeanne', name:'Jeanne', no:'016', ini:'J.B.', year:1902, photo:'1521467752200-3bccf80f16ed', video:'5226', detail:'1532454781337-fc3edff34f91',
-   line:"Un corsage lacé, comme on le faisait chez les grands-mères.", drap:"Taie d'oreiller & drap assortis", trouve:'Ferme du Morvan', broderie:'Initiales entrelacées, jours Venise', coupe:'Colonne, encolure en V, dos lacé, traîne courte', taille:'38 — retouchable du 34 au 44', price:3600},
-  {slug:'eugenie', name:'Eugénie', no:'017', ini:'E.C.', year:1926, photo:'1622277430358-f4d134452e2e', video:'5223', detail:'1579583764988-3e08c6132d2a',
+  {slug:'jeanne', name:'Jeanne', no:'016', ini:'J.B.', year:1902, photo:'1521467752200-3bccf80f16ed', video:'5226', music:'709', detail:'1532454781337-fc3edff34f91',
+   line:"Un corsage lacé, comme on le faisait chez les grands-mères.", drap:"Taie d'oreiller et drap assortis", trouve:'Ferme du Morvan', broderie:'Initiales entrelacées, jours Venise', coupe:'Colonne, encolure en V, dos lacé, traîne courte', taille:'38 — retouchable du 34 au 44', price:3600},
+  {slug:'eugenie', name:'Eugénie', no:'017', ini:'E.C.', year:1926, photo:'1622277430358-f4d134452e2e', video:'5223', music:'617', detail:'1579583764988-3e08c6132d2a',
    line:"La plus simple de toutes. Pour une noce à la campagne.", drap:'Lin rouï sur pré', trouve:'Saint-Ouen, allée Vernaison', broderie:'Monogramme Art déco', coupe:'Robe-chemise, col bateau, dos nu, ceinture de ruban', taille:'40 — retouchable du 36 au 46', price:2900},
-  {slug:'louise', name:'Louise', no:'018', ini:'L.D.', year:1888, photo:'1761116065261-586acfd09b7f', video:'5190', detail:'1525169087805-031a4da0623c',
-   line:"La plus ancienne de nos robes, et la plus lumineuse.", drap:'Drap brodé au point de croix', trouve:"Don d'une petite-fille, Lyon", broderie:'Feston rouge, numéro de pile « 6 »', coupe:'Trapèze, encolure carrée, manches longues en dentelle', taille:'38 — retouchable du 34 au 44', price:3800},
-  {slug:'celeste', name:'Céleste', no:'019', ini:'C.V.', year:1919, photo:'1777312378694-cc3c67fa1adf', video:'5192', detail:'1585241920473-b472eb9ffbae',
+  {slug:'louise', name:'Louise', no:'018', ini:'L.D.', year:1888, photo:'1761116065261-586acfd09b7f', video:'8827', music:'672', detail:'1525169087805-031a4da0623c',
+   line:"La plus ancienne de nos robes, et la plus lumineuse.", drap:'Drap brodé au point de croix', trouve:"Don d'une petite-fille, Lyon", broderie:'Feston rouge, numéro de pile « 6 »', coupe:'Trapèze, encolure carrée, manches longues en dentelle', taille:'38 — retouchable du 34 au 44', price:3800},
+  {slug:'celeste', name:'Céleste', no:'019', ini:'C.V.', year:1919, photo:'1777312378694-cc3c67fa1adf', video:'5221', music:'797', detail:'1585241920473-b472eb9ffbae',
    line:"Une cape qui s'enlève pour danser.", drap:'Nappe de communion', trouve:'Presbytère de Haute-Loire', broderie:"Épis de blé", coupe:'Colonne, col montant, cape amovible', taille:'36 — retouchable du 34 au 42', price:4200},
-  {slug:'hortense', name:'Hortense', no:'020', ini:'H.B.', year:1897, photo:'1529636273736-fc88b31ea9d9', video:'5191', detail:'1770757685010-2d3d30d270d6',
+  {slug:'hortense', name:'Hortense', no:'020', ini:'H.B.', year:1897, photo:'1529636273736-fc88b31ea9d9', video:'51231', music:'657', detail:'1770757685010-2d3d30d270d6',
    line:"Un bustier baleiné, une jupe qui tourne.", drap:'Drap de Bourgogne', trouve:'Domaine viticole, Beaune', broderie:'Chiffre en relief, coton blanc', coupe:'Bustier, jupe en godets, dos lacé', taille:'38 — retouchable du 34 au 44', price:4100},
-  {slug:'marguerite', name:'Marguerite', no:'021', ini:'M.F.', year:1923, photo:'1631234764568-996fab371596', video:'40597', detail:'1557363763-8381968f8353',
+  {slug:'marguerite', name:'Marguerite', no:'021', ini:'M.F.', year:1923, photo:'1631234764568-996fab371596', video:'40597', music:'599', detail:'1557363763-8381968f8353',
    line:"Légère comme une chemise d'été.", drap:'Chemise de nuit de trousseau', trouve:'Brocante de la Croix-Rousse, Lyon', broderie:'Marguerites au passé plat', coupe:'Coupe en biais, bretelles fines, dos nu', taille:'36 — retouchable du 34 au 40', price:2700},
-  {slug:'rose', name:'Rose', no:'022', ini:'R.T.', year:1905, photo:'1594552072238-b8a33785b261', video:'5221', detail:'1550005809-91ad75fb315f',
+  {slug:'rose', name:'Rose', no:'022', ini:'R.T.', year:1905, photo:'1594552072238-b8a33785b261', video:'8871', music:'758', detail:'1550005809-91ad75fb315f',
    line:"Des poches, parce qu'une mariée a toujours quelque chose à garder.", drap:'Drap à jours, Savoie', trouve:"Chalet d'alpage, Beaufortain", broderie:'Jours à fils tirés, initiales bleues', coupe:'Trapèze à poches, encolure carrée, dos à boutons', taille:'40 — retouchable du 36 au 46', price:3200},
-  {slug:'adele', name:'Adèle', no:'023', ini:'A.P.', year:1899, photo:'1549417229-7686ac5595fd', video:'40591', detail:'1549416878-b9ca95e26903',
+  {slug:'adele', name:'Adèle', no:'023', ini:'A.P.', year:1899, photo:'1549417229-7686ac5595fd', video:'40591', music:'63', detail:'1549416878-b9ca95e26903',
    line:"Un col Claudine et des boutons de nacre, comme en 1899.", drap:'Métis bleuté', trouve:'Coffre de mariage, Finistère', broderie:'Chiffre bleu marine, ourlet à jours', coupe:'Princesse, col Claudine, boutons de nacre', taille:'38 — retouchable du 34 au 44', price:3500},
-  {slug:'blanche', name:'Blanche', no:'024', ini:'B.G.', year:1931, photo:'1548313093-370cf4ba3892', video:'40602', detail:'1599142296733-1c1f2073e6de',
+  {slug:'blanche', name:'Blanche', no:'024', ini:'B.G.', year:1931, photo:'1548313093-370cf4ba3892', video:'40602', music:'660', detail:'1599142296733-1c1f2073e6de',
    line:"Une combinaison pour la mairie, une surjupe pour le soir.", drap:'Linge de soie lyonnais', trouve:'Atelier de soyeux, quai Saint-Vincent', broderie:'Monogramme tissé, soie ivoire', coupe:'Combinaison, encolure en V, surjupe amovible', taille:'38 — retouchable du 34 au 44', price:4400}
 ];
 
@@ -204,12 +212,14 @@ else render(ROBES[i], i);
 
 function render(r, i) {
   document.title = `${r.name} — Just Married`;
+  document.querySelector('meta[property="og:title"]').content = `${r.name} — Just Married`;
+  document.querySelector('meta[property="og:image"]').content = IMG(r.photo, 1200);
   document.querySelector('meta[name=description]').content = `${r.name}, robe de mariée Just Married N° ${r.no}. ${r.line} Pièce unique, atelier 5 rue Duguesclin, Lyon 6e.`;
 
   document.getElementById('media').innerHTML = `
-    <figure class="m1"><img src="${IMG(r.photo, 1400)}" alt="Robe ${r.name}"></figure>
-    <figure class="m2"><video autoplay muted loop playsinline poster="${IMG(r.photo, 900)}" src="${VID(r.video)}"></video><figcaption class="eyebrow">${r.name} en mouvement</figcaption></figure>
-    <figure class="m3"><img src="${IMG(r.detail, 1000)}" alt="Détail de la robe ${r.name}" loading="lazy"><figcaption class="eyebrow">Détail</figcaption></figure>`;
+    <figure class="m1" data-reveal><img src="${IMG(r.photo, 1400)}" alt="Robe ${r.name}"></figure>
+    <figure class="m2" data-reveal><video data-music="${r.music}" muted loop playsinline preload="metadata" poster="${IMG(r.photo, 900)}" src="${VID(r.video)}"></video><figcaption class="eyebrow">${r.name} en mouvement</figcaption></figure>
+    <figure class="m3" data-reveal data-speed=".06"><img src="${IMG(r.detail, 1000)}" alt="Détail de la robe ${r.name}" loading="lazy"><figcaption class="eyebrow">Détail</figcaption></figure>`;
 
   document.getElementById('no').textContent = `N° ${r.no} — Pièce unique`;
   document.getElementById('name').textContent = r.name;
@@ -232,8 +242,12 @@ function render(r, i) {
   link('prev', ROBES[(i - 1 + ROBES.length) % ROBES.length]);
   link('next', ROBES[(i + 1) % ROBES.length]);
 
-  requestAnimationFrame(() => document.querySelectorAll('.rv').forEach(e => e.classList.add('on')));
+  const info = document.querySelector('.info');
+  [...info.children].forEach((c, k) => c.style.setProperty('--k', k));
+  [...info.querySelectorAll('dl div')].forEach((c, k) => c.style.setProperty('--k', k));
+  requestAnimationFrame(() => requestAnimationFrame(() => info.classList.add('on')));
 }
 </script>
+<script src="jm.js"></script>
 </body>
 </html>

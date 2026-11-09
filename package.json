@@ -1,0 +1,9 @@
+{
+  "name": "just-married",
+  "private": true,
+  "type": "module",
+  "description": "Site Just Married + CRM (fonctions Vercel, stockage Vercel Blob privé)",
+  "dependencies": {
+    "@vercel/blob": "latest"
+  }
+}

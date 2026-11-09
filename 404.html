@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page introuvable — Just Married</title>
+<meta name="theme-color" content="#f3efe7">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 100'%3E%3Crect width='80' height='100' rx='6' fill='%23f3efe7'/%3E%3Cpath d='M10 94V44a30 30 0 0 1 60 0v50' fill='none' stroke='%231c1a17' stroke-width='3'/%3E%3Ctext x='40' y='78' font-family='Georgia' font-style='italic' font-size='34' text-anchor='middle' fill='%231c1a17'%3EJM%3C/text%3E%3Cpath d='M40 6l6 7-6 7-6-7z' fill='%23b08d4a'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;1,300;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/jm.css">
+<style>
+:root{--paper:#f3efe7;--ink:#1c1a17;--ink-soft:#6b655c;--thread:#9c3b2e;--ease:cubic-bezier(.2,.7,.2,1)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{min-height:100svh;background:var(--paper);color:var(--ink);font-family:"Jost",system-ui,sans-serif;font-weight:300;display:grid;place-items:center;text-align:center;padding:40px 16px}
+svg.arch{width:72px;height:90px;fill:none;stroke:currentColor;stroke-width:1.2;margin-bottom:28px}
+svg.arch path{stroke-dasharray:320;stroke-dashoffset:320;animation:draw 1.6s var(--ease) forwards}
+svg.arch path+path{animation-delay:.25s;stroke-dasharray:2.2 2.2;stroke-dashoffset:0;opacity:0;animation:fade 1s ease .9s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes fade{to{opacity:1}}
+small{display:block;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--ink-soft)}
+h1{font-family:"Cormorant",Georgia,serif;font-weight:300;font-size:clamp(44px,9vw,96px);line-height:.95;margin:18px 0 22px}
+h1 em{font-style:italic;color:var(--thread)}
+p{max-width:420px;margin:0 auto 34px;color:var(--ink-soft);line-height:1.6}
+a.btn{display:inline-block;background:var(--ink);color:var(--paper);text-decoration:none;border-radius:999px;padding:18px 34px;font-size:11px;letter-spacing:.32em;text-transform:uppercase;transition:background .4s}
+a.btn:hover{background:var(--thread)}
+</style>
+</head>
+<body>
+<main>
+  <svg class="arch" viewBox="0 0 80 100" aria-hidden="true"><path d="M6 97V42a34 34 0 0 1 68 0v55"/><path d="M12 97V42a28 28 0 0 1 56 0v55"/></svg>
+  <small>Erreur 404 — Just Married</small>
+  <h1 data-split>Cette page s'est perdue <em>au grenier.</em></h1>
+  <p>Comme ces draps que l'on oublie au fond d'une malle. Revenez à l'atelier, nous avons tout rangé.</p>
+  <a class="btn" href="/">Retour à l'atelier</a>
+</main>
+<script src="/jm.js"></script>
+</body>
+</html>
